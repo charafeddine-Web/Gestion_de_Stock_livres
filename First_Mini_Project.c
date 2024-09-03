@@ -5,13 +5,12 @@
 int main()
 {
     char titre[50][150],auteur[50][150];
-    int quantite,count=0;
-    float prix ;
-    char Ntitre[90][100];
-    // char T[200][200] ;
+    int quantite[50],count=0;
+    float prix[50] ;
+    char Ntitre[100];
     int choix=0;
     do{
-        printf("----------Système de Gestion de Stock dans une Librairie----------- \n 1: Ajouter un livre \n 2: Afficher tous les livres \n 3: Rechercher un livre \n 4: Mettre à jour la quantité d'un livre \n 5: Supprimer un livre \n 6: Afficher le nombre total de livres en stock \n ");
+        printf("----------Systï¿½me de Gestion de Stock dans une Librairie----------- \n 1: Ajouter un livre \n 2: Afficher tous les livres \n 3: Rechercher un livre \n 4: Mettre ï¿½ jour la quantitï¿½ d'un livre \n 5: Supprimer un livre \n 6: Afficher le nombre total de livres en stock \n ");
 
 
         printf("entrer votre choix :\t");
@@ -23,7 +22,7 @@ int main()
                     scanf("%s",titre[count]);
                     printf("entre le auteur du Livre :");
                     scanf("%s",auteur[count]);
-                    printf("entre le quantité du Livre :");
+                    printf("entre le quantitï¿½ du Livre :");
                     scanf("%d",&quantite);
                     printf("entre le prix du Livre:");
                     scanf("%f",&prix);
@@ -37,10 +36,8 @@ int main()
                 printf("aucun livre en stock\n");
             }else{
                 for(int i=0; i<count ;i++){
-                    printf("titre %s\n",titre[i]);
-                    printf("titre %s\n",auteur[i]);
-                    printf("Quentite %d\n",quantite);
-                    printf("Prix %.2f\n",prix);
+                    printf(" | titre %s\n | Auteur %s\n | Quentite %d\n | Prix %f\n",titre[i],auteur[i],quantite[i],prix[i]);
+                    
 
 
                 };
@@ -48,12 +45,15 @@ int main()
                 break;
         case 3:
             for(int j=0 ; j<count ; j++){
-                printf("pleas saisir un titre");
-                scanf("%s",&Ntitre);
-                if(strcmp(titre[count]),Ntitre==0){
-                        printf("titre :%s",titre);
-
-                };
+                printf("pleas saisir un titre :");
+                scanf("%s",Ntitre);
+                if (strcmp(titre[j], Ntitre) ==0) {
+                    printf("Titre : %s\n", titre[j]);
+                    printf("Auteur : %s\n", auteur[j]);
+                    printf("QuantitÃ© : %d\n", quantite[j]);
+                    printf("Prix : %.2f\n", prix[j]);
+                    // break;
+                }
 
             }
             break;
@@ -67,6 +67,9 @@ int main()
         case 6:
             printf("case 6");
             break;
+            
+        default:
+        printf("syntaxe erreur !!\n");
 
 
 
