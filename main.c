@@ -7,13 +7,13 @@ int main()
     char titre[50][150],auteur[50][150];
     int quantite[100],count=0;
     float prix[100] ;
-    char Ntitre[90][100];
+    char Ntitre[100];
     int Nquantite;
     // char T[200][200] ;
     int choix=0;
     int sum=0;
     do{
-        printf("----------Système de Gestion de Stock dans une Librairie----------- \n 1: Ajouter un livre \n 2: Afficher tous les livres \n 3: Rechercher un livre \n 4: Mettre à jour la quantité d'un livre \n 5: Supprimer un livre \n 6: Afficher le nombre total de livres en stock \n ");
+        printf("----------SystÃ¨me de Gestion de Stock dans une Librairie----------- \n 1: Ajouter un livre \n 2: Afficher tous les livres \n 3: Rechercher un livre \n 4: Mettre Ã  jour la quantitÃ© d'un livre \n 5: Supprimer un livre \n 6: Afficher le nombre total de livres en stock \n ");
 
 
         printf("entrer votre choix :\t");
@@ -25,7 +25,7 @@ int main()
                     scanf("%s",titre[count]);
                     printf("entre le auteur du Livre :");
                     scanf("%s",auteur[count]);
-                    printf("entre le quantité du Livre :");
+                    printf("entre le quantitÃ© du Livre :");
                     scanf("%d",&quantite[count]);
                     printf("entre le prix du Livre:");
                     scanf("%f",&prix[count]);
@@ -69,7 +69,7 @@ int main()
                 scanf("%s",&Ntitre);
                  for(int j=0 ; j<count ; j++){
                         if(strcmp(titre[j],Ntitre)==0){
-                                printf("pleas saisir un autre quentite de Livre :");
+                          printf("pleas saisir un autre quentite de Livre :");
                                 scanf("%d",&Nquantite);
                                 quantite[j] = Nquantite;
                                 break;
@@ -100,6 +100,8 @@ int main()
            }
             printf("le number total des livers est :%d\t\n",sum);
             break;
+        default :
+            printf("ERREUR 404 !!\n");
 
     }
 
@@ -107,5 +109,3 @@ int main()
 
 
 }
-
-
