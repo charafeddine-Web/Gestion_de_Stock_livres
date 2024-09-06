@@ -7,7 +7,7 @@ int main()
     char titre[50][150], auteur[50][150];
     int quantite[100], count = 0;
     float prix[100];
-    char Ntitre[90][100];
+    char Ntitre[50][150];
     int Nquantite;
     char tstitre[100];
 
@@ -16,11 +16,11 @@ int main()
     int sum = 0;
     do
     {
-        printf("----------Syst�me de Gestion de Stock dans une Librairie----------- \n \
+        printf("----------Systame de Gestion de Stock dans une Librairie----------- \n \
                1: Ajouter un livre \n \
                2: Afficher tous les livres \n \
                3: Rechercher un livre \n \
-               4: Mettre � jour la quantit dun livre \n \
+               4: Mettre a jour la quantit dun livre \n \
                5: Supprimer un livre \n \
                6: Afficher le nombre total de livres en stock \n ");
 
@@ -73,7 +73,7 @@ int main()
             for (int j = 0; j < count; j++)
             {
 
-                if (strcmp(titre[j], Ntitre) == 0)
+                if (strcmp(titre[j],Ntitre) == 0)
                 {
                     printf("titre :%s\n", titre[j]);
                     printf("Auteur :%s\n", auteur[j]);
@@ -126,8 +126,7 @@ int main()
             printf("le number total des livers est :%d\t\n", sum);
             break;
         }
-        system("pause");
-        system("cls");
+
 
     } while (choix != 0);
 }
