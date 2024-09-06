@@ -10,7 +10,7 @@ int main()
     char Ntitre[50][150];
     int Nquantite;
     char tstitre[100];
-    int t=0;
+
 
     // char T[200][200] ;
     int choix = 0;
@@ -27,34 +27,33 @@ int main()
 
         printf("entrer votre choix :\t");
         scanf("%d", &choix);
-
+       int t=0;
         switch (choix)
         {
         case 1:
-
             printf("entre le Titre du Livre :");
             scanf("%s", tstitre);
             for (int i = 0; i < count; i++){
                 if(strcmp(titre[i], tstitre) == 0){
                     printf("ce livre existe deja !!\n ");
-                    printf("you can change quantity :\n");
+                    printf("you can add quantity :\n");
                     scanf("%d",&Nquantite);
                     quantite[i]= quantite[i]+Nquantite;
                     t=1;
+                    return;
                 }
             }
             if(t==0){
-            strcpy(titre[count],tstitre);
-            printf("entre le auteur du Livre :");
-            scanf("%s", auteur[count]);
-            printf("entre le quantite du Livre :");
-            scanf("%d", &quantite[count]);
-            printf("entre le prix du Livre:");
-            scanf("%f", &prix[count]);
-            printf("ADD books Successful\n");
-            count++;
+                strcpy(titre[count],tstitre);
+                printf("entre le auteur du Livre :");
+                scanf("%s", auteur[count]);
+                printf("entre le quantite du Livre :");
+                scanf("%d", &quantite[count]);
+                printf("entre le prix du Livre:");
+                scanf("%f", &prix[count]);
+                printf("ADD books Successful\n");
+                count++;
             }
-
 
             break;
         case 2:
@@ -106,7 +105,9 @@ int main()
         case 5:
             printf("pleas saisir un titre:\t");
             scanf("%s", &Ntitre);
-            for (int j = 0; j < count; j++)
+
+            int t=0;
+            for (int j = 0; j<count; j++)
             {
                 if (strcmp(titre[j], Ntitre) == 0)
                 {
@@ -116,9 +117,15 @@ int main()
                         strcpy(auteur[k], auteur[k + 1]);
                         quantite[k] = quantite[k + 1];
                         prix[k] = prix[k + 1];
+
                     }
                     count--;
+                    t++;
                 }
+
+            }
+            if(t==0){
+                printf("le livre n'est en stocke !! ");
             }
             printf("livre supprime avec sucess\n");
 
@@ -132,7 +139,8 @@ int main()
             printf("le number total des livers est :%d\t\n", sum);
             break;
         }
-
+        system("pause");
+        system("cls");
 
     } while (choix != 0);
 }
