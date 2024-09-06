@@ -10,13 +10,14 @@ int main()
     char Ntitre[50][150];
     int Nquantite;
     char tstitre[100];
+    int t=0;
 
     // char T[200][200] ;
     int choix = 0;
     int sum = 0;
     do
     {
-        printf("----------Systame de Gestion de Stock dans une Librairie----------- \n \
+        printf("----------Systeme de Gestion de Stock dans une Librairie----------- \n \
                1: Ajouter un livre \n \
                2: Afficher tous les livres \n \
                3: Rechercher un livre \n \
@@ -30,15 +31,19 @@ int main()
         switch (choix)
         {
         case 1:
+
             printf("entre le Titre du Livre :");
             scanf("%s", tstitre);
             for (int i = 0; i < count; i++){
                 if(strcmp(titre[i], tstitre) == 0){
-                    printf("ce livre existe deja !!\n  entre eutre Livre ");
-                    scanf("%s",tstitre);
-                    break;
+                    printf("ce livre existe deja !!\n ");
+                    printf("you can change quantity :\n");
+                    scanf("%d",&Nquantite);
+                    quantite[i]= quantite[i]+Nquantite;
+                    t=1;
                 }
             }
+            if(t==0){
             strcpy(titre[count],tstitre);
             printf("entre le auteur du Livre :");
             scanf("%s", auteur[count]);
@@ -46,9 +51,10 @@ int main()
             scanf("%d", &quantite[count]);
             printf("entre le prix du Livre:");
             scanf("%f", &prix[count]);
-
             printf("ADD books Successful\n");
             count++;
+            }
+
 
             break;
         case 2:
